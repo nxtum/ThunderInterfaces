@@ -28,8 +28,22 @@ namespace Exchange {
     struct EXTERNAL IHelloWorld : virtual public Core::IUnknown{
          enum {ID = ID_HELLOWORLD};
 
-        ~IHelloWorld() override = default;
-        virtual uint32_t PrintStuff(const string &randomWord) const = 0;
+        /* @event */
+         struct EXTERNAL INotification : virtual public Core::IUnknown{
+            enum {ID = ID_HELLOWORLD_NOTIFICATION};
+
+            ~INotification() override = default;
+
+            virtual void Printed(const string &word) const = 0;
+            
+         };
+
+         ~IHelloWorld() override = default;
+
+         virtual void Register(IHelloWorld::INotification *notification) = 0;
+         virtual void Unregister(const IHelloWorld::INotification *notification) = 0;
+
+         virtual uint32_t PrintStuff(const string &randomWord) const = 0;
     };
 
 }

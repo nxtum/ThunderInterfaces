@@ -374,7 +374,8 @@ namespace Exchange {
         ID_TESTAUTOMATIONCOMRPC                      = ID_TESTAUTOMATIONMEMORY + 1,
         ID_TESTAUTOMATIONCOMRPCINTERNAL              = ID_TESTAUTOMATIONMEMORY + 2,
         
-        ID_HELLOWORLD                                = RPC::IDS::ID_EXTERNAL_INTERFACE_OFFSET + 0x500
+        ID_HELLOWORLD                                = RPC::IDS::ID_EXTERNAL_INTERFACE_OFFSET + 0x500,
+        ID_HELLOWORLD_NOTIFICATION                   = ID_HELLOWORLD + 1
     };
 }
 }
